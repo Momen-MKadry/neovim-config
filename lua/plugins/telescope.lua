@@ -24,4 +24,26 @@ return {
       require("telescope").load_extension("ui-select")
     end,
   },
+  {
+    "smartpde/telescope-recent-files",
+    config = function()
+      local builtin = require("telescope.builtin")
+      require("telescope").load_extension("recent_files")
+      vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- recent files
+    end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    config = function()
+      require("telescope").load_extension("file_browser")
+      vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+    end,
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    config = function()
+      require("telescope").load_extension("project")
+      vim.keymap.set("n", "<leader>fp", ":Telescope project<CR>", {})
+    end,
+  }
 }

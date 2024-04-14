@@ -1,31 +1,3 @@
---[[return {
-  "goolord/alpha-nvim",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-
-  config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
-
-    dashboard.section.header.val = {
-
-      "           ▄ ▄                   ",
-      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-      "                                 ",
-      "       [ ━━━━━━ ❖  ━━━━━━ ]      ",
-    }
-    alpha.setup(dashboard.opts)
-  end,
-}]]
-
 return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
@@ -57,20 +29,20 @@ return {
       {
         icon = "󰈞  ",
         desc = "Find  File                              ",
-        action = "Leaderf file --popup",
-        key = "<Leader> f f",
+        action = "Telescope find_files",
+        key = "<C> p",
       },
       {
         icon = "󰈢  ",
         desc = "Recently opened files                   ",
-        action = "Leaderf mru --popup",
+        action = "Telescope oldfiles",
         key = "<Leader> f r",
       },
       {
         icon = "󰈬  ",
         desc = "Project grep                            ",
-        action = "Leaderf rg --popup",
-        key = "<Leader> f g",
+        action = "Telescope project",
+        key = "<Leader> f p",
       },
       {
         icon = "  ",
