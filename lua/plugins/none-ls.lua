@@ -16,6 +16,8 @@ return {
         null_ls.builtins.formatting.shellharden,
         -- js
         null_ls.builtins.formatting.prettier,
+        -- c#
+        null_ls.builtins.formatting.csharpier,
       }
     })
 
